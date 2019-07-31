@@ -1,5 +1,6 @@
 *Slide generation which doesn't suck!!*
-* *Modified colour scheme to black background/white text* * *Added support for right clicking to go to the previous slide.*
+* *Modified colour scheme to black background/white text.*
+* *Added support for right clicking to go to the previous slide.*
 * *Added ugly python build script which automatically replaces images of the form `@path.jpg` or `@http...image.png` with base 64 encodings.*
 
 # Slide
