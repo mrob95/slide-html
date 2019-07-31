@@ -16,6 +16,10 @@ def img_type(image_path):
         return "jpeg"
     elif extension == "png":
         return "png"
+    elif extension == "gif":
+        return "gif"
+    elif extension == "bmp":
+        return "bmp"
 
 def format_lines(input_lines):
     output = []
