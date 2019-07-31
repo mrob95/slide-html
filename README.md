@@ -1,3 +1,5 @@
+*Slide generation which doesn't suck!! Modified colour scheme to black background/white text and added support for right clicking to go back.*
+
 # Slide
 
 The most simple plain text presentation maker.

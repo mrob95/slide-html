@@ -112,6 +112,7 @@ window.onload = function() {
 	render(document.getElementById('slide').innerHTML);
 	goTo(window.location.hash.substring(1)||0);
 	window.onclick = next;
+	window.oncontextmenu = prev;
 	window.onresize = resize;
 	window.onkeydown = function(e) {
 		if (e.keyCode == 39) {
