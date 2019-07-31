@@ -32,11 +32,11 @@ def format_lines(input_lines):
     return output
 
 def main():
-    with open(sys.argv[1], "r") as input:
+    with open(sys.argv[1], "r", encoding="utf-8") as input:
         formatted = "".join(format_lines(input.readlines()))
     with open(os.path.join(source_path, "template.html"), "r") as template:
         result = template.read().replace("{{ CONTENT }}", formatted)
-    with open(sys.argv[2], "w+") as output:
+    with open(sys.argv[2], "w+", encoding="utf-8") as output:
         output.write(result)
 
 if __name__ == '__main__':
