@@ -1,4 +1,6 @@
 import sys, os, base64, requests
+import re, webbrowser
+from subprocess import Popen
 
 source_path = os.path.dirname(os.path.realpath(__file__))
 call_path = os.getcwd()
@@ -24,10 +26,11 @@ def format_lines(input_lines):
     output = []
     for line in input_lines:
         if len(line)>0 and line[0] == "@":
-            image_path = line[1:]
-            image_type = img_type(image_path.strip())
-            image_text = to_bytes(image_path.strip())
+            image_path = line[1:].strip()
+            image_type = img_type(image_path)
+            image_text = to_bytes(image_path)
             line = '<img src="data:image/%s;base64,%s">\n' % (image_type, image_text)
+        # line = re.sub(r"\[(http.*)\]\((.*)\)", r'<a href="\1">\2</a>', line)
         output.append("\t\t\t" + line)
     return output
 
@@ -38,6 +41,7 @@ def main():
         result = template.read().replace("{{ CONTENT }}", formatted)
     with open(sys.argv[2], "w+", encoding="utf-8") as output:
         output.write(result)
+    webbrowser.open_new_tab(sys.argv[2])
 
 if __name__ == '__main__':
     main()
